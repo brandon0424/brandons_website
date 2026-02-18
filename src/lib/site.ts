@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     "Accounting student at UVU and cofounder of Skedra. I build practical AI, automation, and data-driven tools.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com",
-  email: "hello@brandondoes.build",
+  email: "brandon.smithlf@gmail.com",
   location: "Utah, USA",
   role: "Product & Business Lead at Skedra",
   education: "Accounting at Utah Valley University (UVU)",
@@ -22,6 +22,6 @@ export const siteConfig = {
       key: "linkedin"
     },
     { label: "Skedra", href: "https://skedraai.com", key: "website" },
-    { label: "Email", href: "mailto:hello@brandondoes.build", key: "email" }
+    { label: "Email", href: "mailto:brandon.smithlf@gmail.com", key: "email" }
   ]
 } as const;
