@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <defs>
+    <linearGradient id="bg-writing-1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EAF5FF"/>
+      <stop offset="55%" stop-color="#CDE8FF"/>
+      <stop offset="100%" stop-color="#B4DCFF"/>
+    </linearGradient>
+    <linearGradient id="panel-writing-1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#F0F7FF" stop-opacity="0.94"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg-writing-1)"/>
+  <circle cx="1320" cy="120" r="220" fill="#8EC8FF" opacity="0.35"/>
+  <circle cx="260" cy="890" r="260" fill="#9DE1FF" opacity="0.3"/>
+  <rect x="130" y="130" width="1340" height="740" rx="34" fill="url(#panel-writing-1)" stroke="#9AC8EF"/>
+  <rect x="180" y="210" width="420" height="16" rx="8" fill="#77B7EE" opacity="0.8"/>
+  <rect x="180" y="258" width="280" height="14" rx="7" fill="#9BC8F0"/>
+  <rect x="180" y="320" width="1240" height="220" rx="20" fill="#E4F1FF"/>
+  <rect x="180" y="568" width="390" height="240" rx="20" fill="#E9F5FF"/>
+  <rect x="595" y="568" width="390" height="240" rx="20" fill="#E9F5FF"/>
+  <rect x="1010" y="568" width="410" height="240" rx="20" fill="#E9F5FF"/>
+  <text x="180" y="188" fill="#315D85" font-family="Manrope, Arial, sans-serif" font-size="40" font-weight="700">Writing 1 Placeholder</text>
+  <text x="180" y="920" fill="#4C7AA5" font-family="Manrope, Arial, sans-serif" font-size="28">Replace with real screenshot when available</text>
+</svg>
