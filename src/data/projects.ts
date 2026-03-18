@@ -33,29 +33,29 @@ export const projects: Project[] = [
     slug: "skedra",
     category: "Startups",
     summary:
-      "SMS-first AI scheduling assistant for assisted and senior living facility managers.",
+      "Co-founding an SMS-first scheduling assistant and leading discovery, positioning, and early go-to-market work for assisted living managers.",
     tags: ["Product Strategy", "B2B Sales", "Scheduling"],
     liveUrl: "https://skedraai.com",
     repoUrl: "https://github.com/brandon0424/skedra",
     caseStudyUrl: "https://skedraai.com",
     year: 2026,
     highlights: [
-      "Built for facilities with roughly 10–100 employees",
-      "Positioned around reducing last-minute schedule chaos",
-      "Pricing direction: $2 per employee per month"
+      "Lead customer discovery and messaging with assisted-living operators",
+      "Shape positioning, outreach, and the early sales motion",
+      "Guide product direction around simple, text-native workflows"
     ],
     featured: true,
     overview:
-      "Skedra helps managers handle shift changes, call-outs, and urgent coverage requests in the same channel teams already use: text.",
+      "Skedra is the venture where I am doing the most integrated founder work: discovery, positioning, early sales, and product direction around a real operational problem.",
     problem:
       "Managers in assisted living often rely on manual group texts, spreadsheets, and bulky systems that slow down time-sensitive decisions.",
     solution:
       "I lead customer discovery, positioning, and sales strategy while shaping the product toward a practical SMS-first workflow.",
     stack: ["SMS Workflows", "AI Assistant Logic", "Operations Design", "Go-to-Market"],
     outcomes: [
-      "Clear ICP: assisted/senior living facilities",
-      "Refined messaging around stress reduction and speed",
-      "Built repeatable discovery and outreach process"
+      "Refined the ICP around assisted and senior living facilities",
+      "Built messaging around speed, simplicity, and lower scheduling stress",
+      "Established a repeatable discovery and outreach rhythm"
     ],
     screenshots: [
       "/images/placeholders/automation-1.svg",
@@ -67,13 +67,13 @@ export const projects: Project[] = [
     slug: "shift-alert-router",
     category: "Automation",
     summary:
-      "A lightweight automation flow that routes schedule call-outs to the right staff via SMS logic.",
+      "A practical automation prototype for coverage outreach, built to explore how operators respond to faster, clearer escalation flows.",
     tags: ["Python", "Automation", "Ops"],
     liveUrl: "https://example.com/shift-alert-router",
     repoUrl: "https://github.com/brandon0424/shift-alert-router",
     year: 2025,
     highlights: [
-      "Reduced manual call tree effort",
+      "Mapped operator pain into a simple escalation workflow",
       "Structured escalation by availability windows",
       "Kept messaging human and actionable"
     ],
@@ -100,13 +100,13 @@ export const projects: Project[] = [
     slug: "facility-coverage-dashboard",
     category: "Data",
     summary:
-      "SQL-driven dashboard for staffing reliability, call-out patterns, and shift-fill speed.",
+      "SQL-driven reporting prototype built to turn messy staffing data into decisions managers can actually use.",
     tags: ["SQL", "Analytics", "Operations"],
     liveUrl: "https://example.com/facility-coverage-dashboard",
     repoUrl: "https://github.com/brandon0424/facility-coverage-dashboard",
     year: 2026,
     highlights: [
-      "Tracked weekly coverage risk by shift type",
+      "Turned staffing signal into a weekly operator review tool",
       "Surfaced bottlenecks in response speed",
       "Connected metrics to operator decisions"
     ],
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/brandon0424/outbound-rhythm-system",
     year: 2025,
     highlights: [
-      "Improved consistency of founder-led outreach",
+      "Built a repeatable founder-led outreach cadence",
       "Reduced follow-up drops between touches",
       "Kept messaging specific to manager pain points"
     ],

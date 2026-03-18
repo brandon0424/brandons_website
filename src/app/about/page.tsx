@@ -40,7 +40,7 @@ const principles = [
   "Build systems that teams can sustain long term."
 ];
 
-const strengths = ["Learner", "Input", "Arranger", "Positivity", "Strategic", "ENFP"];
+const strengths = ["Learner", "Input", "Arranger", "Positivity", "Strategic"];
 
 const interests = [
   "Entrepreneurship + startups",
@@ -111,6 +111,9 @@ export default function AboutPage() {
           <Reveal>
             <article className="rounded-2xl border border-border bg-card p-7 md:p-8">
               <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Strengths + Style</h2>
+              <p className="mt-4 text-sm leading-relaxed text-muted">
+                Top CliftonStrengths themes:
+              </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {strengths.map((strength) => (
                   <span

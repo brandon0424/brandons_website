@@ -12,16 +12,13 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/projects" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/#contact" }
+  { label: "About", href: "/about" }
 ];
+
+const contactHref = "/#contact";
 
 function isActiveRoute(pathname: string, href: string): boolean {
   if (href === "/") {
-    return pathname === "/";
-  }
-
-  if (href.startsWith("/#")) {
     return pathname === "/";
   }
 
@@ -64,6 +61,12 @@ export function SiteHeader() {
               </Link>
             ))}
           </nav>
+          <Link
+            href={contactHref}
+            className="inline-flex items-center rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition hover:opacity-90"
+          >
+            Contact
+          </Link>
           <ThemeToggle />
         </div>
 
@@ -99,6 +102,12 @@ export function SiteHeader() {
               </Link>
             ))}
           </nav>
+          <Link
+            href={contactHref}
+            className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-accent px-4 py-3 text-sm font-medium text-accent-foreground transition hover:opacity-90"
+          >
+            Contact
+          </Link>
         </div>
       ) : null}
     </header>

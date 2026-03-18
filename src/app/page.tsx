@@ -21,9 +21,9 @@ import { projects } from "@/data/projects";
 import { siteConfig } from "@/lib/site";
 
 const trustStats = [
-  { label: "Program", value: "UVU Sandbox" },
-  { label: "Current Build", value: "Skedra" },
-  { label: "Primary Users", value: "10–100 staff facilities" }
+  { label: "Founder", value: "Cofounding Skedra" },
+  { label: "Go-to-Market", value: "Positioning + Sales" },
+  { label: "Execution", value: "Product + Delivery" }
 ];
 
 const process = [
@@ -34,21 +34,21 @@ const process = [
   },
   {
     title: "Ship practical workflows",
-    body: "I focus on tools people will actually use, especially text-native flows and simple interfaces.",
+    body: "I focus on simple product decisions, clear positioning, and workflows people will actually use.",
     icon: Workflow
   },
   {
     title: "Measure what changed",
-    body: "I use lightweight metrics to check if stress, response time, or manual work improved.",
+    body: "I look for proof in the real world: better response, clearer traction, faster decisions, or less manual work.",
     icon: ChartLine
   }
 ];
 
 const learningNow = [
   "SQL (active learning)",
-  "Python for automations",
+  "Python for practical automation",
   "Web scraping + data workflows",
-  "Sales strategy + outreach automation"
+  "Sales strategy + outreach systems"
 ];
 
 const interests = [
@@ -60,10 +60,10 @@ const interests = [
 ];
 
 const problemFit = [
-  "Reducing last-minute scheduling chaos",
-  "Replacing manual group texts and spreadsheets",
-  "Improving response speed for coverage requests",
-  "Turning messy ops workflows into clear systems"
+  "Turning customer pain into clear product direction",
+  "Reducing last-minute operational chaos",
+  "Improving outreach, response, and follow-through",
+  "Turning messy workflows into simple systems"
 ];
 
 const featuredProjects = projects.filter((project) => project.featured).slice(0, 3);
@@ -97,10 +97,10 @@ export default function HomePage() {
 
               <Reveal delay={150}>
                 <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted md:text-xl">
-                  I build products, automation, and data-driven tools.
+                  Founder with a go-to-market mindset, working across sales, positioning, product direction, and execution.
                 </p>
                 <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted md:text-lg">
-                  Right now I am building Skedra with Austin Bee, an SMS-first AI scheduling assistant for assisted living managers.
+                  I am co-building Skedra with Austin Bee and spending my time in the founder work that sharpens judgment fast: customer discovery, positioning, outreach, product direction, and the execution it takes to turn ideas into traction.
                 </p>
               </Reveal>
 
@@ -117,14 +117,6 @@ export default function HomePage() {
                     className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition hover:border-accent hover:text-accent"
                   >
                     Contact
-                  </Link>
-                  <Link
-                    href={skedraUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition hover:border-accent hover:text-accent"
-                  >
-                    Visit Skedra <ExternalLink className="h-4 w-4" />
                   </Link>
                 </div>
               </Reveal>
@@ -160,17 +152,25 @@ export default function HomePage() {
             <Reveal delay={120}>
               <aside className="rounded-2xl border border-border bg-card/95 p-6 shadow-soft">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-                  What I Am Building
+                  Current Venture
                 </p>
                 <h2 className="mt-4 text-xl font-semibold text-foreground">Skedra</h2>
                 <p className="mt-2 text-sm leading-relaxed text-muted">
-                  AI scheduling assistant for managers in assisted living and senior living facilities.
+                  Skedra is where I am doing founder work in real time: learning from managers, shaping the offer, guiding product direction, and building an early go-to-market motion.
                 </p>
                 <ul className="mt-5 space-y-3 text-sm text-foreground">
-                  <li>• Text-native (SMS-first) workflow</li>
-                  <li>• Replaces manual group texts and spreadsheet scheduling</li>
-                  <li>• Pricing direction: $2 per employee / month</li>
+                  <li>• Customer discovery with assisted living operators</li>
+                  <li>• Positioning and outreach built around real staffing pain</li>
+                  <li>• Product direction centered on simple, text-native execution</li>
                 </ul>
+                <Link
+                  href={skedraUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent transition hover:opacity-80"
+                >
+                  View Skedra <ExternalLink className="h-4 w-4" />
+                </Link>
               </aside>
             </Reveal>
           </div>
@@ -198,7 +198,7 @@ export default function HomePage() {
               <SectionHeading
                 eyebrow="Selected Work"
                 title="Featured Projects"
-                description="Current startup, automation, and analytics work tied to real operating problems."
+                description="Projects that show how I work: close to the customer, clear on the market, and focused on useful execution."
               />
               <Link
                 href="/projects"
@@ -222,11 +222,11 @@ export default function HomePage() {
       <section className="px-6 py-20 md:px-8">
         <div className="mx-auto max-w-6xl space-y-10">
           <Reveal>
-            <SectionHeading
-              eyebrow="How I Work"
-              title="Practical, Fast, and Specific"
-              description="I like clear problem definitions, fast iteration, and measurable outcomes."
-            />
+              <SectionHeading
+                eyebrow="How I Work"
+                title="Practical, Fast, and Specific"
+                description="I like clear problem definitions, fast iteration, and work that stands up in front of real customers."
+              />
           </Reveal>
 
           <div className="grid gap-5 md:grid-cols-3">
@@ -300,7 +300,7 @@ export default function HomePage() {
               <SectionHeading
                 eyebrow="Contact"
                 title="Let’s Build Something Useful"
-                description="If you are working on an operations-heavy product and need clearer systems, reach out."
+                description="If you are building something early and want help with customer discovery, positioning, sales, or product execution, reach out."
               />
 
               <div className="rounded-2xl border border-border bg-card p-6">
