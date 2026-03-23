@@ -6,7 +6,6 @@ import {
   Linkedin,
   Mail,
   RefreshCcw,
-  Sparkles,
   Zap
 } from "lucide-react";
 import Link from "next/link";
