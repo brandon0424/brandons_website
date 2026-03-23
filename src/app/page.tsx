@@ -14,41 +14,32 @@ import {
 import Link from "next/link";
 
 import { ContactForm } from "@/components/contact-form";
-import { ProjectCard } from "@/components/project-card";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
-import { projects } from "@/data/projects";
 import { siteConfig } from "@/lib/site";
-
-const trustStats = [
-  { label: "Founder", value: "Cofounding Skedra" },
-  { label: "Go-to-Market", value: "Positioning + Sales" },
-  { label: "Execution", value: "Product + Delivery" }
-];
 
 const process = [
   {
     title: "Start with customer signal",
-    body: "I run discovery to understand the real operational pain before writing requirements.",
+    body: "I start with real conversations so the problem is clear before the solution gets polished.",
     icon: CircleFadingArrowUp
   },
   {
     title: "Ship practical workflows",
-    body: "I focus on simple product decisions, clear positioning, and workflows people will actually use.",
+    body: "I care about simple positioning, useful product decisions, and execution people can actually adopt.",
     icon: Workflow
   },
   {
     title: "Measure what changed",
-    body: "I look for proof in the real world: better response, clearer traction, faster decisions, or less manual work.",
+    body: "I look for signs of traction: better response, clearer momentum, and less wasted motion.",
     icon: ChartLine
   }
 ];
 
 const learningNow = [
-  "SQL (active learning)",
-  "Python for practical automation",
-  "Web scraping + data workflows",
-  "Sales strategy + outreach systems"
+  "SQL + Python for practical automation",
+  "Sales strategy + outreach systems",
+  "Web scraping + data workflows"
 ];
 
 const interests = [
@@ -62,11 +53,8 @@ const interests = [
 const problemFit = [
   "Turning customer pain into clear product direction",
   "Reducing last-minute operational chaos",
-  "Improving outreach, response, and follow-through",
-  "Turning messy workflows into simple systems"
+  "Improving outreach, response, and follow-through"
 ];
-
-const featuredProjects = projects.filter((project) => project.featured).slice(0, 3);
 
 const githubUrl =
   siteConfig.socials.find((social) => social.key === "github")?.href ?? "#";
@@ -97,26 +85,26 @@ export default function HomePage() {
 
               <Reveal delay={150}>
                 <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted md:text-xl">
-                  Founder with a go-to-market mindset, working across sales, positioning, product direction, and execution.
+                  Founder and go-to-market-minded operator working across sales, positioning, product direction, and execution.
                 </p>
                 <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted md:text-lg">
-                  I am co-building Skedra with Austin Bee and spending my time in the founder work that sharpens judgment fast: customer discovery, positioning, outreach, product direction, and the execution it takes to turn ideas into traction.
+                  I am Brandon. I am co-building Skedra and learning through real customer conversations, outreach, and product decisions. I like helping early ideas get clearer, more useful, and closer to traction.
                 </p>
               </Reveal>
 
               <Reveal delay={220}>
                 <div className="mt-10 flex flex-wrap gap-4">
                   <Link
-                    href="/projects"
+                    href="/#contact"
                     className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition hover:opacity-90"
                   >
-                    View Projects <ArrowRight className="h-4 w-4" />
+                    Start a Conversation <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
-                    href="/#contact"
+                    href="/projects"
                     className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition hover:border-accent hover:text-accent"
                   >
-                    Contact
+                    View Projects
                   </Link>
                 </div>
               </Reveal>
@@ -152,16 +140,16 @@ export default function HomePage() {
             <Reveal delay={120}>
               <aside className="rounded-2xl border border-border bg-card/95 p-6 shadow-soft">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-                  Current Venture
+                  Current Focus
                 </p>
                 <h2 className="mt-4 text-xl font-semibold text-foreground">Skedra</h2>
                 <p className="mt-2 text-sm leading-relaxed text-muted">
-                  Skedra is where I am doing founder work in real time: learning from managers, shaping the offer, guiding product direction, and building an early go-to-market motion.
+                  I am co-building Skedra with Austin Bee. It is the clearest example of how I work: customer discovery, positioning, outreach, and product direction around a real operating problem.
                 </p>
                 <ul className="mt-5 space-y-3 text-sm text-foreground">
                   <li>• Customer discovery with assisted living operators</li>
-                  <li>• Positioning and outreach built around real staffing pain</li>
-                  <li>• Product direction centered on simple, text-native execution</li>
+                  <li>• Testing message, market, and early sales motion</li>
+                  <li>• Keeping the solution simple and text-native</li>
                 </ul>
                 <Link
                   href={skedraUrl}
@@ -174,59 +162,17 @@ export default function HomePage() {
               </aside>
             </Reveal>
           </div>
-
-          <Reveal delay={320}>
-            <div className="mt-12 grid gap-4 sm:grid-cols-3">
-              {trustStats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-2xl border border-border bg-card/90 px-5 py-4"
-                >
-                  <p className="text-2xl font-semibold text-foreground">{stat.value}</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.16em] text-muted">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="px-6 py-20 md:px-8" id="featured-projects">
-        <div className="mx-auto max-w-6xl space-y-10">
-          <Reveal>
-            <div className="flex flex-wrap items-end justify-between gap-5">
-              <SectionHeading
-                eyebrow="Selected Work"
-                title="Featured Projects"
-                description="Projects that show how I work: close to the customer, clear on the market, and focused on useful execution."
-              />
-              <Link
-                href="/projects"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition hover:border-accent hover:text-accent"
-              >
-                View all projects <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </Reveal>
-
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {featuredProjects.map((project, index) => (
-              <Reveal key={project.slug} delay={90 * index}>
-                <ProjectCard project={project} />
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 
       <section className="px-6 py-20 md:px-8">
         <div className="mx-auto max-w-6xl space-y-10">
           <Reveal>
-              <SectionHeading
-                eyebrow="How I Work"
-                title="Practical, Fast, and Specific"
-                description="I like clear problem definitions, fast iteration, and work that stands up in front of real customers."
-              />
+            <SectionHeading
+              eyebrow="How I Work"
+              title="Practical, Fast, and Specific"
+              description="I like clear problems, direct communication, and work that moves quickly toward something real."
+            />
           </Reveal>
 
           <div className="grid gap-5 md:grid-cols-3">
@@ -299,8 +245,8 @@ export default function HomePage() {
             <div className="space-y-6">
               <SectionHeading
                 eyebrow="Contact"
-                title="Let’s Build Something Useful"
-                description="If you are building something early and want help with customer discovery, positioning, sales, or product execution, reach out."
+                title="Start a Conversation"
+                description="If you are building something early and want to talk through positioning, sales, product direction, or practical execution, reach out."
               />
 
               <div className="rounded-2xl border border-border bg-card p-6">

@@ -30,10 +30,9 @@ export function FilterableProjectGrid({ projects }: FilterableProjectGridProps) 
       },
       {
         All: 0,
-        Startups: 0,
-        Automation: 0,
-        Data: 0,
-        Writing: 0
+        Ventures: 0,
+        Web: 0,
+        Experience: 0
       }
     );
   }, [projects]);

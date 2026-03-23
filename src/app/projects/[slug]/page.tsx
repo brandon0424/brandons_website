@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { ArrowLeft, ArrowRight, FileText, Github, Globe2 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -33,11 +32,13 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
     openGraph: {
       title: `${project.title} | ${siteConfig.ownerName}`,
       description: project.summary,
-      images: [
-        {
-          url: project.screenshots[0]
-        }
-      ]
+      images: project.screenshots[0]
+        ? [
+            {
+              url: project.screenshots[0]
+            }
+          ]
+        : undefined
     }
   };
 }
@@ -51,6 +52,12 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
 
   const currentIndex = projects.findIndex((item) => item.slug === project.slug);
   const nextProject = projects[(currentIndex + 1) % projects.length];
+  const isCompactDetail = project.compactDetail === true;
+  const hasHighlights = project.highlights.length > 0;
+  const hasStack = project.stack.length > 0;
+  const hasOutcomes = project.outcomes.length > 0;
+  const hasRole = Boolean(project.role);
+  const hasContributions = (project.contributions?.length ?? 0) > 0;
 
   return (
     <section className="px-6 py-16 md:px-8">
@@ -66,70 +73,68 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
 
         <Reveal delay={80}>
           <header className="space-y-6">
-            <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.18em] text-muted">
-              <span>{project.category}</span>
-              <span>•</span>
-              <span>{project.year}</span>
+            <div className="flex flex-wrap items-start justify-between gap-4">
+              <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.18em] text-muted">
+                <span>{project.category}</span>
+                <span>•</span>
+                <span>{project.period ?? project.year}</span>
+              </div>
+
+              <div className="flex flex-wrap gap-3 text-sm">
+                {project.liveUrl ? (
+                  <Link
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-4 py-2 transition hover:border-accent hover:text-accent"
+                  >
+                    <Globe2 className="h-4 w-4" /> {project.liveLabel ?? "Live"}
+                  </Link>
+                ) : null}
+                {project.repoUrl ? (
+                  <Link
+                    href={project.repoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-4 py-2 transition hover:border-accent hover:text-accent"
+                  >
+                    <Github className="h-4 w-4" /> GitHub
+                  </Link>
+                ) : null}
+                {project.caseStudyUrl ? (
+                  <Link
+                    href={project.caseStudyUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-4 py-2 transition hover:border-accent hover:text-accent"
+                  >
+                    <FileText className="h-4 w-4" /> Case Study
+                  </Link>
+                ) : null}
+              </div>
             </div>
             <h1 className="font-serif text-4xl leading-tight md:text-5xl">{project.title}</h1>
             <p className="max-w-3xl text-lg leading-relaxed text-muted">{project.summary}</p>
-
-            <div className="flex flex-wrap gap-4 text-sm">
-              <Link
-                href={project.liveUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-4 py-2 transition hover:border-accent hover:text-accent"
-              >
-                <Globe2 className="h-4 w-4" /> Live
-              </Link>
-              <Link
-                href={project.repoUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-4 py-2 transition hover:border-accent hover:text-accent"
-              >
-                <Github className="h-4 w-4" /> GitHub
-              </Link>
-              {project.caseStudyUrl ? (
-                <Link
-                  href={project.caseStudyUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-4 py-2 transition hover:border-accent hover:text-accent"
-                >
-                  <FileText className="h-4 w-4" /> Case Study
-                </Link>
-              ) : null}
-            </div>
           </header>
         </Reveal>
 
-        <Reveal delay={120}>
-          <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
-            <Image
-              src={project.screenshots[0]}
-              alt={`${project.title} screenshot`}
-              width={1400}
-              height={875}
-              className="h-auto w-full object-cover"
-              priority
-            />
-          </div>
-        </Reveal>
-
-        <Reveal>
-          <article className="rounded-2xl border border-border bg-card p-6">
-            <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Highlights</h2>
-            <ul className="mt-4 grid gap-3 md:grid-cols-3">
-              {project.highlights.map((highlight) => (
-                <li key={highlight} className="rounded-xl border border-border bg-background/50 p-3 text-sm text-foreground">
-                  {highlight}
-                </li>
-              ))}
-            </ul>
-          </article>
-        </Reveal>
+        {!isCompactDetail && hasHighlights ? (
+          <Reveal>
+            <article className="rounded-2xl border border-border bg-card p-6">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Highlights</h2>
+              <ul className="mt-4 grid gap-3 md:grid-cols-3">
+                {project.highlights.map((highlight) => (
+                  <li
+                    key={highlight}
+                    className="rounded-xl border border-border bg-background/50 p-3 text-sm text-foreground"
+                  >
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </Reveal>
+        ) : null}
 
         <div className="grid gap-6 md:grid-cols-3">
           <Reveal>
@@ -154,53 +159,69 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
           </Reveal>
         </div>
 
-        <Reveal>
-          <article className="rounded-2xl border border-border bg-card p-6">
-            <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Stack</h2>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {project.stack.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-border bg-background/70 px-3 py-1 text-xs text-muted"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </article>
-        </Reveal>
+        {hasRole || hasContributions ? (
+          <Reveal>
+            <article className="rounded-2xl border border-border bg-card p-6">
+              {hasRole ? (
+                <>
+                  <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">My Role</h2>
+                  <p className="mt-4 text-sm leading-relaxed text-foreground">{project.role}</p>
+                </>
+              ) : null}
 
-        <Reveal delay={80}>
-          <article className="rounded-2xl border border-border bg-card p-6">
-            <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Outcomes</h2>
-            <ul className="mt-4 space-y-3">
-              {project.outcomes.map((outcome) => (
-                <li key={outcome} className="text-sm leading-relaxed text-foreground">
-                  • {outcome}
-                </li>
-              ))}
-            </ul>
-          </article>
-        </Reveal>
+              {hasContributions ? (
+                <>
+                  <h3 className="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-muted">
+                    Major Contributions
+                  </h3>
+                  <ul className="mt-4 grid gap-3 md:grid-cols-3">
+                    {project.contributions?.map((item) => (
+                      <li
+                        key={item}
+                        className="rounded-xl border border-border bg-background/50 p-3 text-sm text-foreground"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : null}
+            </article>
+          </Reveal>
+        ) : null}
 
-        <Reveal delay={120}>
-          <article className="rounded-2xl border border-border bg-card p-6">
-            <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Screenshots</h2>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              {project.screenshots.map((shot) => (
-                <div key={shot} className="overflow-hidden rounded-xl border border-border bg-background">
-                  <Image
-                    src={shot}
-                    alt={`${project.title} additional screenshot`}
-                    width={1000}
-                    height={700}
-                    className="h-auto w-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </article>
-        </Reveal>
+        {hasStack ? (
+          <Reveal>
+            <article className="rounded-2xl border border-border bg-card p-6">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Stack</h2>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {project.stack.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-border bg-background/70 px-3 py-1 text-xs text-muted"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </article>
+          </Reveal>
+        ) : null}
+
+        {hasOutcomes ? (
+          <Reveal delay={80}>
+            <article className="rounded-2xl border border-border bg-card p-6">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Outcomes</h2>
+              <ul className="mt-4 space-y-3">
+                {project.outcomes.map((outcome) => (
+                  <li key={outcome} className="text-sm leading-relaxed text-foreground">
+                    • {outcome}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </Reveal>
+        ) : null}
 
         <Reveal>
           <div className="rounded-2xl border border-border bg-card p-6">

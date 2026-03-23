@@ -1,13 +1,18 @@
-export type ProjectCategory = "Startups" | "Automation" | "Data" | "Writing";
+export type ProjectCategory = "Ventures" | "Web" | "Experience";
 
 export type Project = {
   title: string;
   slug: string;
   category: ProjectCategory;
   summary: string;
+  period?: string;
+  compactDetail?: boolean;
+  role?: string;
+  contributions?: string[];
   tags: string[];
-  liveUrl: string;
-  repoUrl: string;
+  liveUrl?: string;
+  liveLabel?: string;
+  repoUrl?: string;
   caseStudyUrl?: string;
   year: number;
   highlights: string[];
@@ -21,41 +26,48 @@ export type Project = {
 };
 
 export const projectCategories: ProjectCategory[] = [
-  "Startups",
-  "Automation",
-  "Data",
-  "Writing"
+  "Ventures",
+  "Web",
+  "Experience"
 ];
 
 export const projects: Project[] = [
   {
     title: "Skedra",
     slug: "skedra",
-    category: "Startups",
+    category: "Ventures",
+    period: "November 2025 - Present",
     summary:
-      "Co-founding an SMS-first scheduling assistant and leading discovery, positioning, and early go-to-market work for assisted living managers.",
-    tags: ["Product Strategy", "B2B Sales", "Scheduling"],
+      "Co-founded an AI scheduling assistant for assisted living facilities, leading product management, customer development, and business direction.",
+    tags: ["Co-founder", "Product Management", "Customer Discovery"],
     liveUrl: "https://skedraai.com",
-    repoUrl: "https://github.com/brandon0424/skedra",
-    caseStudyUrl: "https://skedraai.com",
-    year: 2026,
+    liveLabel: "skedraai.com",
+    year: 2025,
     highlights: [
-      "Lead customer discovery and messaging with assisted-living operators",
-      "Shape positioning, outreach, and the early sales motion",
-      "Guide product direction around simple, text-native workflows"
+      "A real scheduling solution built for live facility workflows",
+      "Shaped with input from 60+ assisted living managers",
+      "3 design partners are actively using Skedra"
     ],
     featured: true,
     overview:
-      "Skedra is the venture where I am doing the most integrated founder work: discovery, positioning, early sales, and product direction around a real operational problem.",
+      "Skedra is an AI scheduling assistant built specifically for assisted living facilities. I co-founded the company with Austin Bee through Utah Valley University's Sandbox program to solve the scheduling stress managers deal with every week.",
     problem:
-      "Managers in assisted living often rely on manual group texts, spreadsheets, and bulky systems that slow down time-sensitive decisions.",
+      "Managers in assisted living facilities often handle callouts, shift changes, and staff communication through fragmented manual systems. The result is constant follow-up, avoidable stress, and too much time spent chasing coverage.",
     solution:
-      "I lead customer discovery, positioning, and sales strategy while shaping the product toward a practical SMS-first workflow.",
-    stack: ["SMS Workflows", "AI Assistant Logic", "Operations Design", "Go-to-Market"],
+      "Skedra uses SMS-first workflows to automate callouts, shift changes, and staff communication in the channel teams already use. It reduces manual follow-up and gives managers clearer visibility into responses, open gaps, and next actions.",
+    role:
+      "As co-founder and product manager, I focus on product strategy, customer development, positioning, and the overall direction of the business. My work sits between customer conversations, product decisions, and the go-to-market motion.",
+    contributions: [
+      "Led discovery conversations with 60+ assisted living managers",
+      "Performed focused outreach to expand design-partner conversations and growth",
+      "Worked directly on product direction and design-partner growth"
+    ],
+    stack: [],
     outcomes: [
-      "Refined the ICP around assisted and senior living facilities",
-      "Built messaging around speed, simplicity, and lower scheduling stress",
-      "Established a repeatable discovery and outreach rhythm"
+      "Launched in November 2025",
+      "3 design partners are actively using Skedra",
+      "Built specifically for assisted living facilities",
+      "Ongoing product iteration with real customer feedback"
     ],
     screenshots: [
       "/images/placeholders/automation-1.svg",
@@ -63,32 +75,43 @@ export const projects: Project[] = [
     ]
   },
   {
-    title: "Shift Alert Router",
-    slug: "shift-alert-router",
-    category: "Automation",
+    title: "Nomen Global",
+    slug: "nomen-global",
+    category: "Experience",
+    period: "February 2025 - August 2025",
     summary:
-      "A practical automation prototype for coverage outreach, built to explore how operators respond to faster, clearer escalation flows.",
-    tags: ["Python", "Automation", "Ops"],
-    liveUrl: "https://example.com/shift-alert-router",
-    repoUrl: "https://github.com/brandon0424/shift-alert-router",
+      "Worked as an Account Executive at an English-learning school, building referral partnerships through outreach, trust, and relationship development.",
+    tags: ["Account Executive", "Partnerships", "Business Development"],
     year: 2025,
     highlights: [
-      "Mapped operator pain into a simple escalation workflow",
-      "Structured escalation by availability windows",
-      "Kept messaging human and actionable"
+      "Helped start 3 major partnerships",
+      "Worked on partnerships with DWS, Deseret Industries, and PF Staffing",
+      "Built relationships designed to drive long-term student referrals"
     ],
     featured: true,
     overview:
-      "This project prototypes practical shift-coverage automation without requiring teams to adopt a new communication behavior.",
+      "At Nomen Global, an English-learning school, I worked as an Account Executive focused on building relationships with organizations that could become long-term sources of student referrals. My work centered on outreach, partnership development, and creating trust with organizations whose communities could benefit from English education.",
     problem:
-      "Coverage gaps become stressful when managers have to text individuals one by one during peak hours.",
+      "The school needed trusted organizational partners that could become long-term sources of student referrals, which required professional outreach, relationship-building, and clear communication of value.",
     solution:
-      "I mapped a simple escalation workflow that checks constraints first, then sends targeted outreach in sequence.",
-    stack: ["Python", "Twilio", "Webhook Workflows", "Google Sheets"],
+      "The approach centered on targeted outreach and partnership development with organizations whose communities could benefit from English education, turning initial conversations into real opportunities for long-term referral growth.",
+    role:
+      "As an Account Executive, I focused on outreach, partnership development, and building trust with organizations that could become long-term referral sources.",
+    contributions: [
+      "Helped establish partnerships with DWS, Deseret Industries, and PF Staffing",
+      "Built relationships with organizations serving potential students",
+      "Moved partnership conversations forward through consistent follow-through"
+    ],
+    stack: [
+      "Outreach",
+      "Partnership Development",
+      "Relationship Building",
+      "Business Development"
+    ],
     outcomes: [
-      "Faster response to urgent call-outs",
-      "Lower coordination overhead for managers",
-      "Better visibility into who was contacted and when"
+      "Helped start 3 major partnerships",
+      "Built partnerships with DWS, Deseret Industries, and PF Staffing",
+      "Strengthened my ability to build strategic partnerships and communicate value in a professional setting"
     ],
     screenshots: [
       "/images/placeholders/pipeline-1.svg",
@@ -96,65 +119,81 @@ export const projects: Project[] = [
     ]
   },
   {
-    title: "Facility Coverage Dashboard",
-    slug: "facility-coverage-dashboard",
-    category: "Data",
+    title: "Brandon's Personal Website",
+    slug: "brandons-personal-website",
+    category: "Web",
+    period: "2026 - Present",
+    compactDetail: true,
     summary:
-      "SQL-driven reporting prototype built to turn messy staffing data into decisions managers can actually use.",
-    tags: ["SQL", "Analytics", "Operations"],
-    liveUrl: "https://example.com/facility-coverage-dashboard",
-    repoUrl: "https://github.com/brandon0424/facility-coverage-dashboard",
+      "Built this site as a simple place to show who I am, what I am building, and where I am headed.",
+    tags: ["Portfolio", "Personal Brand", "Next.js"],
+    liveUrl: "https://personalwebsite-one-kappa.vercel.app",
+    repoUrl: "https://github.com/brandon0424/brandons_website",
     year: 2026,
     highlights: [
-      "Turned staffing signal into a weekly operator review tool",
-      "Surfaced bottlenecks in response speed",
-      "Connected metrics to operator decisions"
+      "Built as a portfolio, networking tool, and digital business card"
     ],
     featured: true,
     overview:
-      "A practical reporting layer for managers who need clear staffing signal without a complicated analytics stack.",
+      "My personal website is a digital extension of who I am, what I am building, and where I am headed. It gives me one place to share my projects, values, and direction clearly.",
     problem:
-      "Teams often know they are overloaded but lack a simple way to quantify where breakdowns are happening.",
+      "A resume or business card only tells part of the story. I wanted a central place that felt more human, current, and useful.",
     solution:
-      "I modeled core staffing metrics in SQL and presented them in a dashboard optimized for fast weekly review.",
-    stack: ["SQL", "Google BigQuery", "Looker Studio", "Data Modeling"],
-    outcomes: [
-      "Made staffing risk visible earlier in the week",
-      "Helped prioritize process fixes over guesswork",
-      "Created reusable metric definitions for future tooling"
+      "The site gives me a central place to share what I am building, how I think, and what kind of work I want to do in a format that is more current and useful than a resume alone.",
+    role:
+      "I designed and built the site myself, handling the positioning, copy, layout, and frontend implementation.",
+    contributions: [
+      "Wrote the messaging and content structure",
+      "Built the site in Next.js, TypeScript, and Tailwind CSS",
+      "Use it as a living portfolio, networking tool, and digital business card"
     ],
+    stack: [
+      "Next.js 14",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vercel"
+    ],
+    outcomes: [],
     screenshots: [
       "/images/placeholders/dashboard-1.svg",
       "/images/placeholders/dashboard-2.svg"
     ]
   },
   {
-    title: "Outbound Rhythm System",
-    slug: "outbound-rhythm-system",
-    category: "Automation",
+    title: "Skedra Website",
+    slug: "skedra-website",
+    category: "Web",
+    period: "2025 - Present",
     summary:
-      "Sales outreach system combining segmentation, follow-up logic, and lightweight personalization.",
-    tags: ["Sales", "Automation", "CRM"],
-    liveUrl: "https://example.com/outbound-rhythm-system",
-    repoUrl: "https://github.com/brandon0424/outbound-rhythm-system",
+      "Designed Skedra's website to establish credibility, clarify messaging, and support early lead capture.",
+    tags: ["Website", "Brand", "Messaging"],
+    liveUrl: "https://skedraai.com",
+    liveLabel: "skedraai.com",
     year: 2025,
     highlights: [
-      "Built a repeatable founder-led outreach cadence",
-      "Reduced follow-up drops between touches",
-      "Kept messaging specific to manager pain points"
+      "Fully designed by Brandon",
+      "Built around lead capture and credibility",
+      "Created to support early-stage startup growth and trust-building"
     ],
     featured: false,
     overview:
-      "Built to support practical B2B sales execution while Brandon led product and business conversations.",
+      "The Skedra website was one of the first major steps in bringing the company to life publicly. It gave the brand a real presence online and helped make the business feel credible from the outside.",
     problem:
-      "Manual outreach can lose momentum when lead lists, notes, and follow-ups are scattered.",
+      "An early-stage startup needs to explain what it does quickly and credibly, especially when it is trying to earn attention and trust from real operators.",
     solution:
-      "I designed a simple outreach cadence with automation triggers and a clear decision process for next touch.",
-    stack: ["CRM", "Zapier", "Email + SMS", "Lead Qualification"],
+      "The site was designed to give Skedra a credible public presence, explain the product clearly, and support early lead capture from operators who need to trust the company quickly.",
+    role:
+      "I owned the design and messaging direction for the site and used it as an early exercise in how Skedra should present itself publicly.",
+    contributions: [
+      "Designed the site end to end",
+      "Shaped the startup's early web messaging",
+      "Built around lead capture and trust-building"
+    ],
+    stack: ["Web Design", "Brand Messaging", "Lead Capture", "Positioning"],
     outcomes: [
-      "Higher follow-through on target accounts",
-      "More consistent message testing",
-      "Cleaner handoff between discovery and sales calls"
+      "Created a public-facing home for the brand",
+      "Established a clearer first impression for potential customers",
+      "Sharpened Skedra's messaging and online presentation"
     ],
     screenshots: [
       "/images/placeholders/crm-1.svg",
@@ -162,32 +201,38 @@ export const projects: Project[] = [
     ]
   },
   {
-    title: "Founder Learning Notes",
-    slug: "founder-learning-notes",
-    category: "Writing",
+    title: "Aptive Sales",
+    slug: "aptive-sales",
+    category: "Experience",
+    period: "Summer 2021",
     summary:
-      "Short practical writing on entrepreneurship, leadership, and ethical AI product decisions.",
-    tags: ["Writing", "Leadership", "Ethics"],
-    liveUrl: "https://example.com/founder-learning-notes",
-    repoUrl: "https://github.com/brandon0424/founder-learning-notes",
-    year: 2026,
+      "Sold pest control door-to-door, closing around 40 accounts and generating about $25,000 in revenue over the summer.",
+    tags: ["Door-to-Door Sales", "Sales", "Resilience"],
+    year: 2021,
     highlights: [
-      "Distills live startup lessons into clear frameworks",
-      "Focuses on practical decisions, not hype",
-      "Covers leadership and psychology in early teams"
+      "Sold around 40 accounts",
+      "Generated about $25,000 in revenue",
+      "Learned resilience and core sales principles"
     ],
     featured: false,
     overview:
-      "A writing practice used to sharpen thinking and communicate decisions with clarity.",
+      "At Aptive, I worked in door-to-door sales selling pest control services. It was one of the most formative sales experiences I have had.",
     problem:
-      "Important lessons from customer calls and sales work get lost if they are not captured quickly.",
+      "Door-to-door sales puts you in a high-rejection environment where you have to earn attention quickly, handle pressure, and stay consistent anyway.",
     solution:
-      "I turned recurring patterns into concise notes that can guide product, sales, and hiring decisions.",
-    stack: ["Editorial Workflow", "Research", "Founder Journaling"],
+      "Success came from applying direct-response sales fundamentals in person: earning attention quickly, handling objections clearly, and staying consistent through rejection.",
+    role:
+      "As a door-to-door sales representative, I sold pest control services in a high-pressure, face-to-face environment.",
+    contributions: [
+      "Sold around 40 accounts",
+      "Generated about $25,000 in revenue",
+      "Built confidence and resilience through repeated rejection"
+    ],
+    stack: ["Sales", "Communication", "Objection Handling", "Resilience"],
     outcomes: [
-      "Improved internal alignment on priorities",
-      "Built reusable language for positioning",
-      "Created a personal knowledge loop for better decisions"
+      "Sold around 40 accounts",
+      "Generated approximately $25,000 in revenue",
+      "Built resilience and confidence under pressure"
     ],
     screenshots: [
       "/images/placeholders/writing-1.svg",
@@ -195,32 +240,38 @@ export const projects: Project[] = [
     ]
   },
   {
-    title: "UVU Finance Ops Model",
-    slug: "uvu-finance-ops-model",
-    category: "Data",
+    title: "Mission",
+    slug: "mission",
+    category: "Experience",
+    period: "2022 - 2024",
     summary:
-      "An accounting-forward model linking pricing, staffing assumptions, and unit economics.",
-    tags: ["Accounting", "Finance", "Unit Economics"],
-    liveUrl: "https://example.com/uvu-finance-ops-model",
-    repoUrl: "https://github.com/brandon0424/uvu-finance-ops-model",
-    year: 2025,
+      "Served in the Tennessee Knoxville Mission, where leadership, discipline, empathy, and communication became daily practice.",
+    tags: ["Leadership", "Service", "Discipline"],
+    year: 2024,
     highlights: [
-      "Connected operational metrics to margin outcomes",
-      "Tested pricing sensitivity scenarios",
-      "Used as a decision aid for founder strategy"
+      "District Leader for 10.5 months",
+      "Zone Leader for 10.5 months",
+      "Trainer for 7.5 months"
     ],
     featured: false,
     overview:
-      "A practical model shaped by Brandon's accounting training and startup operating context.",
+      "I served a two-year mission for The Church of Jesus Christ of Latter-day Saints in the Tennessee Knoxville Mission from 2022 to 2024. It remains one of the most formative experiences of my life.",
     problem:
-      "Early-stage teams often make pricing and hiring choices without a consistent financial lens.",
+      "Missionary service requires sustained discipline, empathy, communication, and leadership across demanding schedules and often challenging situations.",
     solution:
-      "I built a scenario model to make tradeoffs explicit and support clear weekly planning.",
-    stack: ["SQL", "Spreadsheets", "Financial Modeling", "Scenario Planning"],
+      "The work was grounded in disciplined daily service, teaching, and leadership, with a strong emphasis on communication, empathy, and consistency.",
+    role:
+      "I served for two years and spent extended time in leadership and training roles that shaped how I communicate, work, and lead.",
+    contributions: [
+      "District Leader for 10.5 months",
+      "Zone Leader for 10.5 months",
+      "Trainer for 7.5 months"
+    ],
+    stack: ["Leadership", "Discipline", "Empathy", "Communication"],
     outcomes: [
-      "Improved confidence in pricing discussions",
-      "Created shared assumptions across product and sales",
-      "Reduced ambiguity in planning conversations"
+      "Served 10.5 months as District Leader",
+      "Served 10.5 months as Zone Leader",
+      "Spent 7.5 months training a new missionary"
     ],
     screenshots: [
       "/images/placeholders/analytics-1.svg",

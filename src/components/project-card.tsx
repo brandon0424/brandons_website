@@ -62,22 +62,26 @@ export function ProjectCard({ project }: ProjectCardProps) {
           >
             Project Details <ArrowUpRight className="h-4 w-4" />
           </Link>
-          <Link
-            href={project.liveUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1 text-foreground transition hover:text-accent"
-          >
-            <Globe2 className="h-4 w-4" /> Live
-          </Link>
-          <Link
-            href={project.repoUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1 text-foreground transition hover:text-accent"
-          >
-            <Github className="h-4 w-4" /> GitHub
-          </Link>
+          {project.liveUrl ? (
+            <Link
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1 text-foreground transition hover:text-accent"
+            >
+              <Globe2 className="h-4 w-4" /> {project.liveLabel ?? "Live"}
+            </Link>
+          ) : null}
+          {project.repoUrl ? (
+            <Link
+              href={project.repoUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1 text-foreground transition hover:text-accent"
+            >
+              <Github className="h-4 w-4" /> GitHub
+            </Link>
+          ) : null}
           {project.caseStudyUrl ? (
             <Link
               href={project.caseStudyUrl}

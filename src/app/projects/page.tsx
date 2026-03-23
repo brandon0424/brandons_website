@@ -9,7 +9,7 @@ import { projects } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Explore Brandon's startup, automation, data, and writing projects from Skedra and related work."
+    "Explore Brandon's current ventures, websites, and real experience entries."
 };
 
 export default function ProjectsPage() {
@@ -23,13 +23,13 @@ export default function ProjectsPage() {
             <SectionHeading
               eyebrow="Portfolio"
               title="Projects"
-              description="Startup, automation, data, and writing work focused on practical operations outcomes."
+              description="A smaller set of real projects, websites, and experiences. More detail on each is being added over time."
             />
             <Link
               href="/#contact"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition hover:border-accent hover:text-accent"
             >
-              Need help with a workflow-heavy product?
+              Want context on any of these?
             </Link>
           </div>
         </Reveal>
