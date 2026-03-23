@@ -121,7 +121,6 @@ export const projects: Project[] = [
     summary:
       "Built this site as a simple place to show who I am, what I am building, and where I am headed.",
     tags: ["Portfolio", "Personal Brand", "Next.js"],
-    liveUrl: "https://personalwebsite-one-kappa.vercel.app",
     repoUrl: "https://github.com/brandon0424/brandons_website",
     year: 2026,
     highlights: [

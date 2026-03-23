@@ -41,10 +41,6 @@ export function SiteHeader() {
         </Link>
 
         <div className="hidden items-center gap-4 md:flex">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs text-muted">
-            <span className="h-2 w-2 rounded-full bg-emerald-500" />
-            Building Skedra in UVU Sandbox
-          </span>
           <nav className="flex items-center gap-2 rounded-full border border-border bg-card/85 p-1 text-sm text-muted">
             {navItems.map((item) => (
               <Link

@@ -1,15 +1,13 @@
 import {
   ArrowRight,
-  BookOpen,
-  ChartLine,
-  CircleFadingArrowUp,
   ExternalLink,
   Github,
+  HeartHandshake,
   Linkedin,
   Mail,
+  RefreshCcw,
   Sparkles,
-  Target,
-  Workflow
+  Zap
 } from "lucide-react";
 import Link from "next/link";
 
@@ -18,42 +16,22 @@ import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { siteConfig } from "@/lib/site";
 
-const process = [
+const strengths = [
   {
-    title: "Start with customer signal",
-    body: "I start with real conversations so the problem is clear before the solution gets polished.",
-    icon: CircleFadingArrowUp
+    title: "Lead with people",
+    body: "I genuinely like people, which helps me build trust, communicate clearly, and understand what actually matters to them.",
+    icon: HeartHandshake
   },
   {
-    title: "Ship practical workflows",
-    body: "I care about simple positioning, useful product decisions, and execution people can actually adopt.",
-    icon: Workflow
+    title: "Move with initiative",
+    body: "I like being proactive, working hard, and pushing things forward until they become real instead of staying theoretical.",
+    icon: Zap
   },
   {
-    title: "Measure what changed",
-    body: "I look for signs of traction: better response, clearer momentum, and less wasted motion.",
-    icon: ChartLine
+    title: "Learn and iterate fast",
+    body: "I learn by doing, fail quickly when needed, and use each round of feedback to improve the next one.",
+    icon: RefreshCcw
   }
-];
-
-const learningNow = [
-  "SQL + Python for practical automation",
-  "Sales strategy + outreach systems",
-  "Web scraping + data workflows"
-];
-
-const interests = [
-  "Leadership + psychology",
-  "Ethics in technology",
-  "Sustainable energy",
-  "AI agents that are useful and principled",
-  "Business strategy + finance/accounting"
-];
-
-const problemFit = [
-  "Turning customer pain into clear product direction",
-  "Reducing last-minute operational chaos",
-  "Improving outreach, response, and follow-through"
 ];
 
 const githubUrl =
@@ -71,28 +49,27 @@ export default function HomePage() {
           <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
             <div>
               <Reveal>
-                <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-xs uppercase tracking-[0.2em] text-muted">
-                  <Sparkles className="h-3.5 w-3.5 text-accent" />
-                  UVU Accounting + Sandbox Entrepreneur
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+                  Home
                 </p>
               </Reveal>
 
-              <Reveal delay={80}>
+              <Reveal delay={40}>
                 <h1 className="max-w-3xl font-serif text-5xl leading-tight sm:text-6xl md:text-7xl">
                   Brandon
                 </h1>
               </Reveal>
 
-              <Reveal delay={150}>
+              <Reveal delay={90}>
                 <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted md:text-xl">
                   Founder and go-to-market-minded operator working across sales, positioning, product direction, and execution.
                 </p>
                 <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted md:text-lg">
-                  I am Brandon. I am co-building Skedra and learning through real customer conversations, outreach, and product decisions. I like helping early ideas get clearer, more useful, and closer to traction.
+                  I am Brandon. I am co-founding Skedra and learning through real customer conversations, outreach, and product decisions. I like helping early ideas get clearer, more useful, and closer to traction.
                 </p>
               </Reveal>
 
-              <Reveal delay={220}>
+              <Reveal delay={160}>
                 <div className="mt-10 flex flex-wrap gap-4">
                   <Link
                     href="/#contact"
@@ -109,7 +86,7 @@ export default function HomePage() {
                 </div>
               </Reveal>
 
-              <Reveal delay={260}>
+              <Reveal delay={200}>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
                     href={githubUrl}
@@ -138,24 +115,19 @@ export default function HomePage() {
             </div>
 
             <Reveal delay={120}>
-              <aside className="rounded-2xl border border-border bg-card/95 p-6 shadow-soft">
+              <aside className="rounded-2xl border border-border bg-card/95 p-5 shadow-soft md:p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
                   Current Focus
                 </p>
-                <h2 className="mt-4 text-xl font-semibold text-foreground">Skedra</h2>
+                <h2 className="mt-3 text-xl font-semibold text-foreground">Skedra</h2>
                 <p className="mt-2 text-sm leading-relaxed text-muted">
-                  I am co-building Skedra with Austin Bee. It is the clearest example of how I work: customer discovery, positioning, outreach, and product direction around a real operating problem.
+                  I am co-founding Skedra with Austin Bee, an AI scheduling tool for assisted living teams. It is the clearest example of how I work: customer discovery, positioning, outreach, and product direction around a real operating problem.
                 </p>
-                <ul className="mt-5 space-y-3 text-sm text-foreground">
-                  <li>• Customer discovery with assisted living operators</li>
-                  <li>• Testing message, market, and early sales motion</li>
-                  <li>• Keeping the solution simple and text-native</li>
-                </ul>
                 <Link
                   href={skedraUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent transition hover:opacity-80"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent transition hover:opacity-80"
                 >
                   View Skedra <ExternalLink className="h-4 w-4" />
                 </Link>
@@ -169,73 +141,27 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl space-y-10">
           <Reveal>
             <SectionHeading
-              eyebrow="How I Work"
-              title="Practical, Fast, and Specific"
-              description="I like clear problems, direct communication, and work that moves quickly toward something real."
+              eyebrow="Strengths"
+              title="How I Tend to Work Best"
+              description="The strengths I rely on most are communication, initiative, and learning fast through real-world iteration."
             />
           </Reveal>
 
           <div className="grid gap-5 md:grid-cols-3">
-            {process.map((step, index) => {
-              const Icon = step.icon;
+            {strengths.map((item, index) => {
+              const Icon = item.icon;
 
               return (
-                <Reveal key={step.title} delay={70 * index}>
+                <Reveal key={item.title} delay={70 * index}>
                   <article className="rounded-2xl border border-border bg-card p-6">
                     <Icon className="h-5 w-5 text-accent" />
-                    <h3 className="mt-4 text-lg font-semibold text-foreground">{step.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted">{step.body}</p>
+                    <h3 className="mt-4 text-lg font-semibold text-foreground">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
                   </article>
                 </Reveal>
               );
             })}
           </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-20 md:px-8">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-3">
-          <Reveal>
-            <article className="h-full rounded-2xl border border-border bg-card p-6">
-              <div className="inline-flex rounded-full border border-border bg-background p-2">
-                <BookOpen className="h-4 w-4 text-accent" />
-              </div>
-              <h3 className="mt-4 text-lg font-semibold text-foreground">Learning Now</h3>
-              <ul className="mt-3 space-y-2 text-sm text-muted">
-                {learningNow.map((item) => (
-                  <li key={item}>• {item}</li>
-                ))}
-              </ul>
-            </article>
-          </Reveal>
-
-          <Reveal delay={80}>
-            <article className="h-full rounded-2xl border border-border bg-card p-6">
-              <div className="inline-flex rounded-full border border-border bg-background p-2">
-                <Target className="h-4 w-4 text-accent" />
-              </div>
-              <h3 className="mt-4 text-lg font-semibold text-foreground">Problems I Like Solving</h3>
-              <ul className="mt-3 space-y-2 text-sm text-muted">
-                {problemFit.map((item) => (
-                  <li key={item}>• {item}</li>
-                ))}
-              </ul>
-            </article>
-          </Reveal>
-
-          <Reveal delay={140}>
-            <article className="h-full rounded-2xl border border-border bg-card p-6">
-              <div className="inline-flex rounded-full border border-border bg-background p-2">
-                <Sparkles className="h-4 w-4 text-accent" />
-              </div>
-              <h3 className="mt-4 text-lg font-semibold text-foreground">Long-Term Interests</h3>
-              <ul className="mt-3 space-y-2 text-sm text-muted">
-                {interests.map((item) => (
-                  <li key={item}>• {item}</li>
-                ))}
-              </ul>
-            </article>
-          </Reveal>
         </div>
       </section>
 
