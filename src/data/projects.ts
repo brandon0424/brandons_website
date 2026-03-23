@@ -69,10 +69,7 @@ export const projects: Project[] = [
       "Built specifically for assisted living facilities",
       "Ongoing product iteration with real customer feedback"
     ],
-    screenshots: [
-      "/images/placeholders/automation-1.svg",
-      "/images/placeholders/automation-2.svg"
-    ]
+    screenshots: ["/images/projects/skedra.png"]
   },
   {
     title: "Nomen Global",
@@ -113,10 +110,7 @@ export const projects: Project[] = [
       "Built partnerships with DWS, Deseret Industries, and PF Staffing",
       "Strengthened my ability to build strategic partnerships and communicate value in a professional setting"
     ],
-    screenshots: [
-      "/images/placeholders/pipeline-1.svg",
-      "/images/placeholders/pipeline-2.svg"
-    ]
+    screenshots: ["/images/projects/nomen-global.png"]
   },
   {
     title: "Brandon's Personal Website",
@@ -154,10 +148,7 @@ export const projects: Project[] = [
       "Vercel"
     ],
     outcomes: [],
-    screenshots: [
-      "/images/placeholders/dashboard-1.svg",
-      "/images/placeholders/dashboard-2.svg"
-    ]
+    screenshots: ["/images/projects/brandons-personal-website.png"]
   },
   {
     title: "Skedra Website",
@@ -195,10 +186,7 @@ export const projects: Project[] = [
       "Established a clearer first impression for potential customers",
       "Sharpened Skedra's messaging and online presentation"
     ],
-    screenshots: [
-      "/images/placeholders/crm-1.svg",
-      "/images/placeholders/crm-2.svg"
-    ]
+    screenshots: ["/images/projects/skedra-website.png"]
   },
   {
     title: "Aptive Sales",
@@ -234,10 +222,7 @@ export const projects: Project[] = [
       "Generated approximately $25,000 in revenue",
       "Built resilience and confidence under pressure"
     ],
-    screenshots: [
-      "/images/placeholders/writing-1.svg",
-      "/images/placeholders/writing-2.svg"
-    ]
+    screenshots: ["/images/projects/aptive-sales.png"]
   },
   {
     title: "Mission",
@@ -273,10 +258,7 @@ export const projects: Project[] = [
       "Served 10.5 months as Zone Leader",
       "Spent 7.5 months training a new missionary"
     ],
-    screenshots: [
-      "/images/placeholders/analytics-1.svg",
-      "/images/placeholders/analytics-2.svg"
-    ]
+    screenshots: ["/images/projects/mission.png"]
   }
 ];
 
