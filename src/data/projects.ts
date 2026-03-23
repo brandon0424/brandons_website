@@ -8,6 +8,7 @@ export type Project = {
   period?: string;
   compactDetail?: boolean;
   role?: string;
+  roleLabel?: string;
   contributions?: string[];
   tags: string[];
   liveUrl?: string;
@@ -99,17 +100,8 @@ export const projects: Project[] = [
       "Built relationships with organizations serving potential students",
       "Moved partnership conversations forward through consistent follow-through"
     ],
-    stack: [
-      "Outreach",
-      "Partnership Development",
-      "Relationship Building",
-      "Business Development"
-    ],
-    outcomes: [
-      "Helped start 3 major partnerships",
-      "Built partnerships with DWS, Deseret Industries, and PF Staffing",
-      "Strengthened my ability to build strategic partnerships and communicate value in a professional setting"
-    ],
+    stack: [],
+    outcomes: [],
     screenshots: ["/images/projects/nomen-global.png"]
   },
   {
@@ -133,13 +125,10 @@ export const projects: Project[] = [
       "A resume or business card only tells part of the story. I wanted a central place that felt more human, current, and useful.",
     solution:
       "The site gives me a central place to share what I am building, how I think, and what kind of work I want to do in a format that is more current and useful than a resume alone.",
+    roleLabel: "Built by Me",
     role:
-      "I designed and built the site myself, handling the positioning, copy, layout, and frontend implementation.",
-    contributions: [
-      "Wrote the messaging and content structure",
-      "Built the site in Next.js, TypeScript, and Tailwind CSS",
-      "Use it as a living portfolio, networking tool, and digital business card"
-    ],
+      "I designed and built the site myself, from the messaging and layout to the frontend implementation. It is meant to function as a living portfolio, a networking tool, and a digital business card that actually feels like me.",
+    contributions: [],
     stack: [
       "Next.js 14",
       "TypeScript",
@@ -161,25 +150,20 @@ export const projects: Project[] = [
     liveLabel: "skedraai.com",
     year: 2025,
     highlights: [
-      "Fully designed by Brandon",
+      "Built and Designed by Brandon",
       "Built around lead capture and credibility",
       "Created to support early-stage startup growth and trust-building"
     ],
     featured: false,
     overview:
-      "The Skedra website was one of the first major steps in bringing the company to life publicly. It gave the brand a real presence online and helped make the business feel credible from the outside.",
+      "The Skedra website is the landing page potential customers see when they want to understand what the product is, how it helps, and whether it is worth taking seriously.",
     problem:
       "An early-stage startup needs to explain what it does quickly and credibly, especially when it is trying to earn attention and trust from real operators.",
     solution:
       "The site was designed to give Skedra a credible public presence, explain the product clearly, and support early lead capture from operators who need to trust the company quickly.",
-    role:
-      "I owned the design and messaging direction for the site and used it as an early exercise in how Skedra should present itself publicly.",
-    contributions: [
-      "Designed the site end to end",
-      "Shaped the startup's early web messaging",
-      "Built around lead capture and trust-building"
-    ],
-    stack: ["Web Design", "Brand Messaging", "Lead Capture", "Positioning"],
+    role: undefined,
+    contributions: [],
+    stack: [],
     outcomes: [
       "Created a public-facing home for the brand",
       "Established a clearer first impression for potential customers",
@@ -215,12 +199,8 @@ export const projects: Project[] = [
       "Generated about $25,000 in revenue",
       "Built confidence and resilience through repeated rejection"
     ],
-    stack: ["Sales", "Communication", "Objection Handling", "Resilience"],
-    outcomes: [
-      "Sold around 40 accounts",
-      "Generated approximately $25,000 in revenue",
-      "Built resilience and confidence under pressure"
-    ],
+    stack: [],
+    outcomes: [],
     screenshots: ["/images/projects/aptive-sales.png"]
   },
   {

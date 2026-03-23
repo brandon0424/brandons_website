@@ -164,7 +164,9 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
             <article className="rounded-2xl border border-border bg-card p-6">
               {hasRole ? (
                 <>
-                  <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">My Role</h2>
+                  <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">
+                    {project.roleLabel ?? "My Role"}
+                  </h2>
                   <p className="mt-4 text-sm leading-relaxed text-foreground">{project.role}</p>
                 </>
               ) : null}
@@ -172,7 +174,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
               {hasContributions ? (
                 <>
                   <h3 className="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-muted">
-                    Major Contributions
+                    Major Accomplishments
                   </h3>
                   <ul className="mt-4 grid gap-3 md:grid-cols-3">
                     {project.contributions?.map((item) => (

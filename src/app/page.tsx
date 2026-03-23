@@ -65,7 +65,7 @@ export default function HomePage() {
                   Founder and go-to-market-minded operator working across sales, positioning, product direction, and execution.
                 </p>
                 <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted md:text-lg">
-                  I am Brandon. I am co-founding Skedra and learning through real customer conversations, outreach, and product decisions. I like helping early ideas get clearer, more useful, and closer to traction.
+                  I am Brandon. I am co-founding Skedra and learning through real customer conversations, outreach, and product decisions. I like helping early ideas turn into clear offers, useful products, and real traction.
                 </p>
               </Reveal>
 
