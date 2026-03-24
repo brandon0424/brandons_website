@@ -40,11 +40,22 @@ const timeline = [
 ];
 
 const principles = [
-  "Start with people. Trust and useful work both begin with understanding people well.",
-  "Be proactive. Momentum usually comes from following up, asking directly, and doing the next hard thing.",
-  "Learn fast. I would rather test, fail quickly, and improve than stay stuck in theory.",
-  "Keep communication clear, direct, and human.",
-  "Use technology to reduce stress and create clarity, not more noise."
+  {
+    title: "Integrity",
+    body: "Do what is right, even when it is inconvenient."
+  },
+  {
+    title: "Diligence",
+    body: "Work hard, stay consistent, and follow through."
+  },
+  {
+    title: "Action",
+    body: "Move early, take initiative, and make things real."
+  },
+  {
+    title: "Lead by example",
+    body: "Earn trust through the way you show up every day."
+  }
 ];
 
 const strengths = ["Learner", "Input", "Arranger", "Positivity", "Strategic"];
@@ -64,6 +75,8 @@ export default function AboutPage() {
     "My family is incredible. My parents are Eric and Alicia Smith, and I have four siblings: my older sister Courtney, my older brothers Ryan and Tyler, and my younger brother Evan. We are an absolute riot together and spend a lot of our time laughing, joking, and having a genuinely good time. That environment gave me a love for people, a sense of humor, and a deep appreciation for connection.",
     "At the center of all of this is a desire to have real impact. I want my life to be spent building meaningful things and improving people’s lives in positive ways. Sometimes that impact comes through a company, a product, or a system. Other times it comes through a conversation, a relationship, or a small daily interaction. I care deeply about faith, discipline, character, and becoming someone who can contribute wherever I am. More than anything, I want to build things that last, help people move forward, and live a life marked by growth, contribution, and real purpose."
   ];
+  const linkedinUrl =
+    siteConfig.socials.find((social) => social.key === "linkedin")?.href ?? "#";
 
   return (
     <section className="px-6 py-20 md:px-8">
@@ -86,16 +99,28 @@ export default function AboutPage() {
         <Reveal delay={120}>
           <article className="rounded-2xl border border-border bg-card p-7 md:p-8">
             <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Timeline</h2>
-            <div className="mt-6 space-y-6 border-l border-border pl-5">
+            <div className="mt-6 space-y-4 border-l border-border pl-5">
               {timeline.map((item) => (
-                <div key={item.year} className="relative grid gap-2 md:grid-cols-[100px_1fr] md:gap-4">
-                  <span className="absolute -left-[1.7rem] top-1 h-2.5 w-2.5 rounded-full bg-accent" />
-                  <p className="text-sm font-semibold text-accent">{item.year}</p>
-                  <div>
-                    <h3 className="text-base font-semibold text-foreground">{item.title}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-muted">{item.detail}</p>
+                <details
+                  key={`${item.year}-${item.title}`}
+                  className="group relative"
+                >
+                  <span className="absolute -left-[1.7rem] top-4 h-2.5 w-2.5 rounded-full bg-accent" />
+                  <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <div className="grid gap-2 md:grid-cols-[180px_1fr] md:gap-4">
+                      <p className="text-sm font-semibold text-accent">{item.year}</p>
+                      <div className="flex items-start justify-between gap-3">
+                        <h3 className="text-base font-semibold text-foreground">{item.title}</h3>
+                        <span className="mt-0.5 text-base leading-none text-muted transition group-open:rotate-45">
+                          +
+                        </span>
+                      </div>
+                    </div>
+                  </summary>
+                  <div className="mt-2 md:ml-[calc(180px+1rem)]">
+                    <p className="text-sm leading-relaxed text-muted">{item.detail}</p>
                   </div>
-                </div>
+                </details>
               ))}
             </div>
           </article>
@@ -106,8 +131,9 @@ export default function AboutPage() {
             <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Principles</h2>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {principles.map((principle) => (
-                <div key={principle} className="rounded-xl border border-border bg-background/60 p-4 text-sm text-foreground">
-                  {principle}
+                <div key={principle.title} className="rounded-xl border border-border bg-background/60 p-4">
+                  <h3 className="text-sm font-semibold text-foreground">{principle.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{principle.body}</p>
                 </div>
               ))}
             </div>
@@ -138,16 +164,18 @@ export default function AboutPage() {
 
         <Reveal delay={200}>
           <div className="rounded-2xl border border-border bg-card p-7 md:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Work Together</p>
-            <h2 className="mt-3 text-2xl font-semibold text-foreground">Need someone strong in people, momentum, and execution?</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Connect</p>
+            <h2 className="mt-3 text-2xl font-semibold text-foreground">LinkedIn is the easiest place to reach me.</h2>
             <p className="mt-2 text-sm text-muted">
-              I am especially interested in early-stage work where customer understanding, clear communication, and practical follow-through actually matter.
+              If you want to connect, start there.
             </p>
             <Link
-              href="/#contact"
-              className="mt-5 inline-flex items-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition hover:opacity-90"
+              href={linkedinUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-flex items-center rounded-full border border-border bg-background/70 px-4 py-2 text-sm font-medium text-accent transition hover:border-accent hover:opacity-80"
             >
-              Get in touch
+              Connect on LinkedIn
             </Link>
           </div>
         </Reveal>
