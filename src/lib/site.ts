@@ -3,7 +3,7 @@ export const siteConfig = {
   siteName: "Brandon",
   description:
     "Accounting student at UVU and cofounder of Skedra. I build practical AI, automation, and data-driven tools.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://brandonsmith-portfolio.vercel.app",
   email: "brandon.smithlf@gmail.com",
   location: "Utah, USA",
   role: "Product & Business Lead at Skedra",
