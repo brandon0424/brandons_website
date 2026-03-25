@@ -8,7 +8,7 @@ Founder-operator and accounting student at Utah Valley University with experienc
 ## Experience
 ### Skedra
 **Co-founder, Product & Business Lead** | November 2025 - Present
-- Co-founded an AI scheduling assistant for assisted living facilities through UVU's Sandbox program.
+- Co-founded an AI scheduling assistant for assisted living facilities.
 - Lead customer discovery, positioning, outreach, product direction, and business development.
 - Conducted discovery conversations with 60+ assisted living managers to shape product direction.
 - Supported early growth to 3 active design partners using Skedra in real workflows.
@@ -34,9 +34,9 @@ Founder-operator and accounting student at Utah Valley University with experienc
 ## Additional Experience
 ### Tennessee Knoxville Mission
 **Missionary, The Church of Jesus Christ of Latter-day Saints** | 2022 - 2024
-- Served a two-year mission focused on service, communication, discipline, and consistent daily execution.
+- Served a two-year mission developing skills in service, discipline, and communication.
 - Served 10.5 months as a District Leader, 10.5 months as a Zone Leader, and 7.5 months training a new missionary.
-- Earned the rank of Eagle Scout.
+- **Eagle Scout, BSA**
 
 ## Selected Projects
 ### Skedra Website
