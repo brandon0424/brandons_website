@@ -21,6 +21,7 @@ export const siteConfig = {
       href: "https://www.linkedin.com/in/brandon-smith-b17572325",
       key: "linkedin"
     },
+    { label: "Resume", href: "/resume", key: "resume" },
     { label: "Skedra", href: "https://skedraai.com", key: "website" },
     { label: "Email", href: "mailto:brandon.smithlf@gmail.com", key: "email" }
   ]

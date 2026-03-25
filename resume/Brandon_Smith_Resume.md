@@ -36,6 +36,7 @@ Founder-operator and accounting student at Utah Valley University with experienc
 **Missionary, The Church of Jesus Christ of Latter-day Saints** | 2022 - 2024
 - Served a two-year mission focused on service, communication, discipline, and consistent daily execution.
 - Served 10.5 months as a District Leader, 10.5 months as a Zone Leader, and 7.5 months training a new missionary.
+- Earned the rank of Eagle Scout.
 
 ## Selected Projects
 ### Skedra Website

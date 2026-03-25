@@ -1,7 +1,7 @@
 import {
   ArrowRight,
   ExternalLink,
-  Github,
+  FileText,
   HeartHandshake,
   Linkedin,
   Mail,
@@ -33,10 +33,10 @@ const strengths = [
   }
 ];
 
-const githubUrl =
-  siteConfig.socials.find((social) => social.key === "github")?.href ?? "#";
 const linkedinUrl =
   siteConfig.socials.find((social) => social.key === "linkedin")?.href ?? "#";
+const resumeUrl =
+  siteConfig.socials.find((social) => social.key === "resume")?.href ?? "/resume";
 const skedraUrl =
   siteConfig.socials.find((social) => social.key === "website")?.href ?? "#";
 
@@ -54,9 +54,18 @@ export default function HomePage() {
               </Reveal>
 
               <Reveal delay={40}>
-                <h1 className="max-w-3xl font-serif text-5xl leading-tight sm:text-6xl md:text-7xl">
-                  Brandon
-                </h1>
+                <div className="flex flex-wrap items-center gap-4">
+                  <h1 className="font-serif text-5xl leading-tight sm:text-6xl md:text-7xl">
+                    Brandon
+                  </h1>
+                  <Link
+                    href={resumeUrl}
+                    className="inline-flex translate-y-1 items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground transition hover:border-accent hover:text-accent"
+                  >
+                    <FileText className="h-4 w-4" />
+                    Resume
+                  </Link>
+                </div>
               </Reveal>
 
               <Reveal delay={90}>
@@ -87,14 +96,6 @@ export default function HomePage() {
 
               <Reveal delay={200}>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  <Link
-                    href={githubUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-xs font-medium text-muted transition hover:border-accent hover:text-foreground"
-                  >
-                    <Github className="h-3.5 w-3.5" /> GitHub
-                  </Link>
                   <Link
                     href={linkedinUrl}
                     target="_blank"
@@ -177,14 +178,6 @@ export default function HomePage() {
               <div className="rounded-2xl border border-border bg-card p-6">
                 <p className="text-sm text-muted">Find me on</p>
                 <div className="mt-4 flex flex-wrap gap-3">
-                  <Link
-                    href={githubUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm transition hover:border-accent hover:text-accent"
-                  >
-                    <Github className="h-4 w-4" /> GitHub
-                  </Link>
                   <Link
                     href={linkedinUrl}
                     target="_blank"

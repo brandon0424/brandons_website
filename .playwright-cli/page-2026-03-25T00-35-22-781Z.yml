@@ -1,0 +1,86 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - paragraph [ref=e5]: Resume
+      - heading "Brandon Lee Smith" [level=1] [ref=e6]
+      - paragraph [ref=e7]: Founder-operator with experience in sales, partnerships, customer discovery, and product direction.
+    - generic [ref=e8]:
+      - paragraph [ref=e9]: Provo, Utah
+      - paragraph [ref=e10]:
+        - link "brandon.smithlf@gmail.com" [ref=e11] [cursor=pointer]:
+          - /url: mailto:brandon.smithlf@gmail.com
+      - paragraph [ref=e12]:
+        - link "Website" [ref=e13] [cursor=pointer]:
+          - /url: https://brandonsmith-portfolio.vercel.app/
+        - text: "|"
+        - link "LinkedIn" [ref=e14] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/brandon-smith-b17572325
+  - generic [ref=e15]:
+    - heading "Summary" [level=2] [ref=e16]
+    - paragraph [ref=e17]: Accounting student at Utah Valley University and co-founder of Skedra, with hands-on experience across outreach, relationship-building, sales, positioning, and early-stage execution. Strong in clear communication, steady follow-through, and turning early ideas into practical momentum.
+  - generic [ref=e18]:
+    - heading "Education" [level=2] [ref=e19]
+    - article [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - heading "Utah Valley University" [level=3] [ref=e23]
+          - paragraph [ref=e24]: B.S. in Accounting, In Progress
+        - paragraph [ref=e25]: 2025 - Present
+      - list [ref=e26]:
+        - listitem [ref=e27]: Accounting student with strong interest in business strategy, entrepreneurship, and execution.
+        - listitem [ref=e28]: Participant in UVU’s Sandbox program, building Skedra through real customer work and product iteration.
+  - generic [ref=e29]:
+    - heading "Experience" [level=2] [ref=e30]
+    - article [ref=e31]:
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - heading "Skedra" [level=3] [ref=e34]
+          - paragraph [ref=e35]: Co-founder, Product & Business Lead
+        - paragraph [ref=e36]: Nov 2025 - Present
+      - list [ref=e37]:
+        - listitem [ref=e38]: Co-founded an AI scheduling assistant for assisted living facilities through UVU’s Sandbox program.
+        - listitem [ref=e39]: Lead customer discovery, positioning, outreach, product direction, and early go-to-market execution.
+        - listitem [ref=e40]: Conducted discovery conversations with 60+ assisted living managers to shape product direction.
+        - listitem [ref=e41]: Helped grow Skedra to 3 active design partners using the product in real workflows.
+    - article [ref=e42]:
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - heading "Nomen Global" [level=3] [ref=e45]
+          - paragraph [ref=e46]: Account Executive
+        - paragraph [ref=e47]: Feb 2025 - Aug 2025
+      - list [ref=e48]:
+        - listitem [ref=e49]: Built referral partnerships for an English-learning school through outreach, relationship development, and trust-building.
+        - listitem [ref=e50]: Helped establish 3 major partnerships with DWS, Deseret Industries, and PF Staffing.
+        - listitem [ref=e51]: Moved partnership conversations forward through consistent follow-through and clear communication of value.
+    - article [ref=e52]:
+      - generic [ref=e53]:
+        - generic [ref=e54]:
+          - heading "Aptive Environmental" [level=3] [ref=e55]
+          - paragraph [ref=e56]: Door-to-Door Sales Representative
+        - paragraph [ref=e57]: Summer 2021
+      - list [ref=e58]:
+        - listitem [ref=e59]: Sold pest control services in a high-pressure, face-to-face sales environment.
+        - listitem [ref=e60]: Closed approximately 40 accounts and generated roughly $25,000 in revenue over the summer.
+        - listitem [ref=e61]: Built resilience, confidence, and direct communication skills through repeated rejection and consistent follow-through.
+  - generic [ref=e62]:
+    - generic [ref=e63]:
+      - heading "Additional Experience" [level=2] [ref=e64]
+      - article [ref=e65]:
+        - generic [ref=e66]:
+          - generic [ref=e67]:
+            - heading "Tennessee Knoxville Mission" [level=3] [ref=e68]
+            - paragraph [ref=e69]: Missionary, The Church of Jesus Christ of Latter-day Saints
+          - paragraph [ref=e70]: 2022 - 2024
+        - list [ref=e71]:
+          - listitem [ref=e72]: Served a two-year mission focused on service, discipline, communication, and daily execution.
+          - listitem [ref=e73]: Served 10.5 months as District Leader, 10.5 months as Zone Leader, and 7.5 months training a new missionary.
+          - listitem [ref=e74]: Earned the rank of Eagle Scout.
+    - generic [ref=e75]:
+      - heading "Selected Projects" [level=2] [ref=e76]
+      - list [ref=e77]:
+        - listitem [ref=e78]:
+          - strong [ref=e79]: "Skedra Website:"
+          - text: Designed and launched Skedra’s public-facing landing page to support trust, clarity, and lead capture.
+        - listitem [ref=e80]:
+          - strong [ref=e81]: "Personal Website:"
+          - text: Designed and put together a personal portfolio site using AI-assisted tools to present my work, direction, and professional brand clearly.

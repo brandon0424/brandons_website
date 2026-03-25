@@ -1,4 +1,4 @@
-import { Github, Globe2, Linkedin, Mail } from "lucide-react";
+import { FileText, Github, Globe2, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
 import { siteConfig } from "@/lib/site";
@@ -6,6 +6,7 @@ import { siteConfig } from "@/lib/site";
 const iconMap = {
   github: Github,
   linkedin: Linkedin,
+  resume: FileText,
   website: Globe2,
   email: Mail
 };
