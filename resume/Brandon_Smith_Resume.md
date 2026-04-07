@@ -36,7 +36,8 @@ Founder-operator and accounting student at Utah Valley University with experienc
 **Missionary, The Church of Jesus Christ of Latter-day Saints** | 2022 - 2024
 - Served a two-year mission developing skills in service, discipline, and communication.
 - Served 10.5 months as a District Leader, 10.5 months as a Zone Leader, and 7.5 months training a new missionary.
-- **Eagle Scout, BSA**
+
+### Eagle Scout, BSA
 
 ## Selected Projects
 ### Skedra Website
