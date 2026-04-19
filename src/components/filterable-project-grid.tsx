@@ -67,7 +67,17 @@ export function FilterableProjectGrid({ projects }: FilterableProjectGridProps) 
 
   return (
     <div className="space-y-8">
-      <div className="space-y-4 rounded-2xl border border-border bg-card p-5 md:p-6">
+      <div className="ui-panel space-y-5 p-5 md:p-6">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p className="text-sm font-medium text-foreground">Browse projects</p>
+            <p className="mt-1 text-sm text-muted">Search, sort, or narrow the list by category.</p>
+          </div>
+          <span className="ui-badge bg-background/80">
+            {filteredProjects.length} showing
+          </span>
+        </div>
+
         <div className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-center">
           <label className="relative block">
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
@@ -75,7 +85,7 @@ export function FilterableProjectGrid({ projects }: FilterableProjectGridProps) 
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Search by title, summary, or tag"
-              className="w-full rounded-xl border border-border bg-background py-2.5 pl-10 pr-10 text-sm text-foreground outline-none ring-accent transition focus:ring-2"
+              className="ui-input pl-10 pr-10"
             />
             {query ? (
               <button
@@ -95,7 +105,7 @@ export function FilterableProjectGrid({ projects }: FilterableProjectGridProps) 
             <select
               value={sortKey}
               onChange={(event) => setSortKey(event.target.value as SortKey)}
-              className="rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground outline-none ring-accent transition focus:ring-2"
+              className="ui-select"
             >
               <option value="newest">Newest first</option>
               <option value="oldest">Oldest first</option>
@@ -110,10 +120,10 @@ export function FilterableProjectGrid({ projects }: FilterableProjectGridProps) 
               type="button"
               onClick={() => setActiveFilter(filter)}
               className={cn(
-                "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition",
+                "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition",
                 activeFilter === filter
-                  ? "border-accent bg-accent text-accent-foreground"
-                  : "border-border bg-background text-muted hover:border-accent/45 hover:text-foreground"
+                  ? "border-accent bg-accent text-accent-foreground shadow-sm"
+                  : "border-border bg-background/80 text-muted hover:border-accent/45 hover:text-foreground"
               )}
             >
               {filter}
@@ -146,7 +156,7 @@ export function FilterableProjectGrid({ projects }: FilterableProjectGridProps) 
           ))}
         </div>
       ) : (
-        <div className="rounded-2xl border border-dashed border-border bg-card/70 p-8 text-sm text-muted">
+        <div className="ui-panel border-dashed bg-card/70 p-8 text-sm text-muted">
           No projects match your current filters. Try another category or clear the search.
         </div>
       )}

@@ -128,7 +128,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 rounded-2xl border border-border bg-card p-6">
+    <form onSubmit={handleSubmit} className="ui-panel space-y-5 p-6">
       <div className="space-y-2">
         <label htmlFor="name" className="text-sm font-medium text-foreground">
           Name
@@ -143,7 +143,7 @@ export function ContactForm() {
           onChange={(event) => updateField("name", event.target.value)}
           aria-invalid={showNameError}
           className={cn(
-            "w-full rounded-xl border bg-background px-4 py-3 text-sm text-foreground outline-none ring-accent transition focus:ring-2",
+            "ui-input",
             showNameError ? "border-rose-500" : "border-border"
           )}
           placeholder="Your name"
@@ -165,7 +165,7 @@ export function ContactForm() {
           onChange={(event) => updateField("email", event.target.value)}
           aria-invalid={showEmailError}
           className={cn(
-            "w-full rounded-xl border bg-background px-4 py-3 text-sm text-foreground outline-none ring-accent transition focus:ring-2",
+            "ui-input",
             showEmailError ? "border-rose-500" : "border-border"
           )}
           placeholder="you@example.com"
@@ -193,7 +193,7 @@ export function ContactForm() {
           onChange={(event) => updateField("message", event.target.value)}
           aria-invalid={showMessageError}
           className={cn(
-            "w-full rounded-xl border bg-background px-4 py-3 text-sm text-foreground outline-none ring-accent transition focus:ring-2",
+            "ui-textarea",
             showMessageError ? "border-rose-500" : "border-border"
           )}
           placeholder="Tell me what you're building, what's stuck, and what timeline you're targeting..."
@@ -203,31 +203,35 @@ export function ContactForm() {
         ) : null}
       </div>
 
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70"
-      >
-        {status === "loading" ? (
-          <>
-            <Loader2 className="h-4 w-4 animate-spin" /> Sending
-          </>
-        ) : (
-          <>
-            <Send className="h-4 w-4" /> Send note
-          </>
-        )}
-      </button>
-
-      {feedback ? (
-        <p
-          className={`text-sm ${
-            status === "error" ? "text-rose-500" : "text-emerald-600 dark:text-emerald-400"
-          }`}
+      <div className="flex flex-col gap-4 border-t border-border/70 pt-5 sm:flex-row sm:items-center sm:justify-between">
+        <button
+          type="submit"
+          disabled={status === "loading"}
+          className="ui-pill-accent justify-center disabled:cursor-not-allowed disabled:opacity-70"
         >
-          {feedback}
-        </p>
-      ) : null}
+          {status === "loading" ? (
+            <>
+              <Loader2 className="h-4 w-4 animate-spin" /> Sending
+            </>
+          ) : (
+            <>
+              <Send className="h-4 w-4" /> Send note
+            </>
+          )}
+        </button>
+
+        {feedback ? (
+          <p
+            className={`text-sm ${
+              status === "error" ? "text-rose-500" : "text-emerald-600 dark:text-emerald-400"
+            }`}
+          >
+            {feedback}
+          </p>
+        ) : (
+          <p className="text-sm text-muted">Short messages are fine. I will follow up from there.</p>
+        )}
+      </div>
     </form>
   );
 }

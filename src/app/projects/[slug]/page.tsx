@@ -65,7 +65,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
         <Reveal>
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-sm text-muted transition hover:text-foreground"
+            className="ui-pill-muted px-3 py-2 text-sm"
           >
             <ArrowLeft className="h-4 w-4" /> Back to projects
           </Link>
@@ -86,7 +86,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-4 py-2 transition hover:border-accent hover:text-accent"
+                    className="ui-pill bg-card/95"
                   >
                     <Globe2 className="h-4 w-4" /> {project.liveLabel ?? "Live"}
                   </Link>
@@ -96,7 +96,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
                     href={project.repoUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-4 py-2 transition hover:border-accent hover:text-accent"
+                    className="ui-pill bg-card/95"
                   >
                     <Github className="h-4 w-4" /> GitHub
                   </Link>
@@ -106,7 +106,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
                     href={project.caseStudyUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-4 py-2 transition hover:border-accent hover:text-accent"
+                    className="ui-pill bg-card/95"
                   >
                     <FileText className="h-4 w-4" /> Case Study
                   </Link>
@@ -120,13 +120,13 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
 
         {!isCompactDetail && hasHighlights ? (
           <Reveal>
-            <article className="rounded-2xl border border-border bg-card p-6">
+            <article className="ui-panel p-6">
               <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Highlights</h2>
               <ul className="mt-4 grid gap-3 md:grid-cols-3">
                 {project.highlights.map((highlight) => (
                   <li
                     key={highlight}
-                    className="rounded-xl border border-border bg-background/50 p-3 text-sm text-foreground"
+                    className="ui-panel-muted p-3 text-sm text-foreground"
                   >
                     {highlight}
                   </li>
@@ -138,21 +138,21 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
 
         <div className="grid gap-6 md:grid-cols-3">
           <Reveal>
-            <article className="rounded-2xl border border-border bg-card p-6">
+            <article className="ui-panel p-6">
               <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Overview</h2>
               <p className="mt-4 text-sm leading-relaxed text-foreground">{project.overview}</p>
             </article>
           </Reveal>
 
           <Reveal delay={80}>
-            <article className="rounded-2xl border border-border bg-card p-6">
+            <article className="ui-panel p-6">
               <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Problem</h2>
               <p className="mt-4 text-sm leading-relaxed text-foreground">{project.problem}</p>
             </article>
           </Reveal>
 
           <Reveal delay={140}>
-            <article className="rounded-2xl border border-border bg-card p-6">
+            <article className="ui-panel p-6">
               <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Solution</h2>
               <p className="mt-4 text-sm leading-relaxed text-foreground">{project.solution}</p>
             </article>
@@ -161,7 +161,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
 
         {hasRole || hasContributions ? (
           <Reveal>
-            <article className="rounded-2xl border border-border bg-card p-6">
+            <article className="ui-panel p-6">
               {hasRole ? (
                 <>
                   <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">
@@ -180,7 +180,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
                     {project.contributions?.map((item) => (
                       <li
                         key={item}
-                        className="rounded-xl border border-border bg-background/50 p-3 text-sm text-foreground"
+                        className="ui-panel-muted p-3 text-sm text-foreground"
                       >
                         {item}
                       </li>
@@ -194,13 +194,13 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
 
         {hasStack ? (
           <Reveal>
-            <article className="rounded-2xl border border-border bg-card p-6">
+            <article className="ui-panel p-6">
               <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Stack</h2>
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.stack.map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-border bg-background/70 px-3 py-1 text-xs text-muted"
+                    className="ui-badge bg-background/70"
                   >
                     {item}
                   </span>
@@ -212,12 +212,16 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
 
         {hasOutcomes ? (
           <Reveal delay={80}>
-            <article className="rounded-2xl border border-border bg-card p-6">
+            <article className="ui-panel p-6">
               <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Outcomes</h2>
               <ul className="mt-4 space-y-3">
                 {project.outcomes.map((outcome) => (
-                  <li key={outcome} className="text-sm leading-relaxed text-foreground">
-                    • {outcome}
+                  <li
+                    key={outcome}
+                    className="ui-panel-muted flex items-start gap-3 p-3 text-sm leading-relaxed text-foreground"
+                  >
+                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent" />
+                    <span>{outcome}</span>
                   </li>
                 ))}
               </ul>
@@ -226,7 +230,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
         ) : null}
 
         <Reveal>
-          <div className="rounded-2xl border border-border bg-card p-6">
+          <div className="ui-panel p-6">
             <p className="text-xs uppercase tracking-[0.16em] text-muted">Continue</p>
             <Link
               href={`/projects/${nextProject.slug}`}

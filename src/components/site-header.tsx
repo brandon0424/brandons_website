@@ -41,16 +41,16 @@ export function SiteHeader() {
         </Link>
 
         <div className="hidden items-center gap-4 md:flex">
-          <nav className="flex items-center gap-2 rounded-full border border-border bg-card/85 p-1 text-sm text-muted">
+          <nav className="flex items-center gap-1 rounded-full border border-border/80 bg-card/90 p-1.5 text-sm text-muted shadow-soft">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "rounded-full px-3 py-2 transition",
+                  "rounded-full px-3.5 py-2 transition",
                   isActiveRoute(pathname, item.href)
-                    ? "bg-accent text-accent-foreground"
-                    : "hover:text-foreground"
+                    ? "bg-accent text-accent-foreground shadow-sm"
+                    : "hover:bg-background/80 hover:text-foreground"
                 )}
               >
                 {item.label}
@@ -59,7 +59,7 @@ export function SiteHeader() {
           </nav>
           <Link
             href={contactHref}
-            className="inline-flex items-center rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition hover:opacity-90"
+            className="ui-pill-accent px-4 py-2"
           >
             Contact
           </Link>
@@ -71,7 +71,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => setIsMenuOpen((prev) => !prev)}
-            className="inline-flex items-center justify-center rounded-full border border-border bg-card p-2 text-foreground transition hover:border-accent hover:text-accent"
+            className="inline-flex items-center justify-center rounded-full border border-border bg-card p-2 text-foreground shadow-soft transition hover:border-accent hover:text-accent"
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
@@ -88,7 +88,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "block rounded-lg px-3 py-2 text-sm transition",
+                  "block rounded-xl px-3 py-2.5 text-sm transition",
                   isActiveRoute(pathname, item.href)
                     ? "bg-accent text-accent-foreground"
                     : "text-foreground hover:bg-background"
@@ -100,7 +100,7 @@ export function SiteHeader() {
           </nav>
           <Link
             href={contactHref}
-            className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-accent px-4 py-3 text-sm font-medium text-accent-foreground transition hover:opacity-90"
+            className="ui-pill-accent mt-4 inline-flex w-full justify-center"
           >
             Contact
           </Link>

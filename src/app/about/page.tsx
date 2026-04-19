@@ -90,34 +90,33 @@ export default function AboutPage() {
         </Reveal>
 
         <Reveal delay={70}>
-          <article className="rounded-2xl border border-border bg-card p-7 md:p-8">
+          <article className="ui-panel p-7 md:p-8">
             <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Bio</h2>
             <ExpandableBio paragraphs={bioParagraphs} />
           </article>
         </Reveal>
 
         <Reveal delay={120}>
-          <article className="rounded-2xl border border-border bg-card p-7 md:p-8">
+          <article className="ui-panel p-7 md:p-8">
             <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Timeline</h2>
-            <div className="mt-6 space-y-4 border-l border-border pl-5">
+            <div className="mt-6 space-y-3">
               {timeline.map((item) => (
                 <details
                   key={`${item.year}-${item.title}`}
-                  className="group relative"
+                  className="group ui-panel-muted px-4 py-4"
                 >
-                  <span className="absolute -left-[1.7rem] top-4 h-2.5 w-2.5 rounded-full bg-accent" />
                   <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                    <div className="grid gap-2 md:grid-cols-[180px_1fr] md:gap-4">
-                      <p className="text-sm font-semibold text-accent">{item.year}</p>
-                      <div className="flex items-start justify-between gap-3">
-                        <h3 className="text-base font-semibold text-foreground">{item.title}</h3>
-                        <span className="mt-0.5 text-base leading-none text-muted transition group-open:rotate-45">
+                    <div className="grid gap-3 md:grid-cols-[180px_1fr_auto] md:items-start md:gap-4">
+                      <span className="ui-badge w-fit justify-center border-accent/20 bg-accent/10 text-accent">
+                        {item.year}
+                      </span>
+                      <h3 className="text-base font-semibold text-foreground">{item.title}</h3>
+                      <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-border bg-card text-base leading-none text-muted transition group-open:rotate-45 group-open:border-accent/40 group-open:text-accent">
                           +
-                        </span>
-                      </div>
+                      </span>
                     </div>
                   </summary>
-                  <div className="mt-2 md:ml-[calc(180px+1rem)]">
+                  <div className="mt-4 border-t border-border/70 pt-4 md:ml-[calc(180px+1rem)]">
                     <p className="text-sm leading-relaxed text-muted">{item.detail}</p>
                   </div>
                 </details>
@@ -127,12 +126,14 @@ export default function AboutPage() {
         </Reveal>
 
         <Reveal delay={160}>
-          <article className="rounded-2xl border border-border bg-card p-7 md:p-8">
+          <article className="ui-panel p-7 md:p-8">
             <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Principles</h2>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {principles.map((principle) => (
-                <div key={principle.title} className="rounded-xl border border-border bg-background/60 p-4">
-                  <h3 className="text-sm font-semibold text-foreground">{principle.title}</h3>
+                <div key={principle.title} className="ui-panel-muted p-4">
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.08em] text-foreground">
+                    {principle.title}
+                  </h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{principle.body}</p>
                 </div>
               ))}
@@ -141,7 +142,7 @@ export default function AboutPage() {
         </Reveal>
 
         <Reveal>
-          <article className="rounded-2xl border border-border bg-card p-7 md:p-8">
+          <article className="ui-panel p-7 md:p-8">
             <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Strengths + Style</h2>
             <p className="mt-4 text-sm leading-relaxed text-muted">
               Top CliftonStrengths themes:
@@ -150,7 +151,7 @@ export default function AboutPage() {
               {strengths.map((strength) => (
                 <span
                   key={strength}
-                  className="rounded-full border border-border bg-background/70 px-3 py-1 text-xs text-foreground"
+                  className="ui-badge bg-background/70 text-foreground"
                 >
                   {strength}
                 </span>
@@ -163,7 +164,7 @@ export default function AboutPage() {
         </Reveal>
 
         <Reveal delay={200}>
-          <div className="rounded-2xl border border-border bg-card p-7 md:p-8">
+          <div className="ui-panel p-7 md:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Connect</p>
             <h2 className="mt-3 text-2xl font-semibold text-foreground">LinkedIn is the easiest place to reach me.</h2>
             <p className="mt-2 text-sm text-muted">
@@ -173,7 +174,7 @@ export default function AboutPage() {
               href={linkedinUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-5 inline-flex items-center rounded-full border border-border bg-background/70 px-4 py-2 text-sm font-medium text-accent transition hover:border-accent hover:opacity-80"
+              className="ui-pill mt-5 bg-background/70 text-accent hover:text-accent"
             >
               Connect on LinkedIn
             </Link>

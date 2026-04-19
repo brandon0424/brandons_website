@@ -29,7 +29,7 @@ export function SiteFooter() {
                 href={social.href}
                 target={social.href.startsWith("http") ? "_blank" : undefined}
                 rel={social.href.startsWith("http") ? "noreferrer" : undefined}
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground transition hover:border-accent hover:text-accent"
+                className="ui-pill bg-card/95"
               >
                 <Icon className="h-4 w-4" />
                 {social.label}

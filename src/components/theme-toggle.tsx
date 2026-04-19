@@ -12,7 +12,7 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-card px-3 py-2 text-xs font-medium text-foreground transition hover:border-accent hover:text-accent"
+      className="ui-pill px-3 py-2 text-xs"
       aria-label="Toggle dark mode"
     >
       {isDark ? <SunMedium className="h-4 w-4" /> : <MoonStar className="h-4 w-4" />}

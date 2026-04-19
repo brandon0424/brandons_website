@@ -12,7 +12,7 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border/80 bg-card/95 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-accent/45">
+    <article className="ui-panel group flex h-full flex-col overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-accent/45">
       <div className="relative aspect-[16/10] overflow-hidden">
         <Image
           src={project.screenshots[0]}
@@ -23,14 +23,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
           priority={project.featured}
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+        <div className="absolute left-4 top-4 flex flex-wrap gap-2">
+          <span className="ui-badge border-white/20 bg-slate-950/40 text-white backdrop-blur">
+            {project.category}
+          </span>
+          <span className="ui-badge border-white/20 bg-slate-950/40 text-white backdrop-blur">
+            {project.year}
+          </span>
+        </div>
       </div>
 
       <div className="flex flex-1 flex-col gap-5 p-6">
         <div className="space-y-3">
-          <div className="flex items-center justify-between gap-3 text-xs text-muted">
-            <span>{project.category}</span>
-            <span>{project.year}</span>
-          </div>
           <h3 className="text-xl font-semibold tracking-tight text-foreground">
             <Link
               href={`/projects/${project.slug}`}
@@ -41,24 +45,26 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </Link>
           </h3>
           <p className="text-sm leading-relaxed text-muted">{project.summary}</p>
-          <p className="text-sm leading-relaxed text-foreground">{project.highlights[0]}</p>
+          <div className="ui-panel-muted p-3">
+            <p className="text-sm leading-relaxed text-foreground">{project.highlights[0]}</p>
+          </div>
         </div>
 
         <div className="flex flex-wrap gap-2">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-border bg-background/65 px-3 py-1 text-xs text-muted"
+              className="ui-badge bg-background/65"
             >
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="mt-auto flex flex-wrap items-center gap-4 text-sm">
+        <div className="mt-auto flex flex-wrap items-center gap-3 border-t border-border/70 pt-4 text-sm">
           <Link
             href={`/projects/${project.slug}`}
-            className="inline-flex items-center gap-1 font-medium text-foreground transition hover:text-accent"
+            className="ui-pill bg-background/70 px-3 py-2 text-sm"
           >
             Project Details <ArrowUpRight className="h-4 w-4" />
           </Link>
@@ -67,7 +73,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               href={project.liveUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1 text-foreground transition hover:text-accent"
+              className="ui-pill-muted px-3 py-2 text-sm"
             >
               <Globe2 className="h-4 w-4" /> {project.liveLabel ?? "Live"}
             </Link>
@@ -77,7 +83,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               href={project.repoUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1 text-foreground transition hover:text-accent"
+              className="ui-pill-muted px-3 py-2 text-sm"
             >
               <Github className="h-4 w-4" /> GitHub
             </Link>
@@ -87,7 +93,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               href={project.caseStudyUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1 text-foreground transition hover:text-accent"
+              className="ui-pill-muted px-3 py-2 text-sm"
             >
               <FileText className="h-4 w-4" /> Case Study
             </Link>

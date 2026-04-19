@@ -27,7 +27,7 @@ export default function ProjectsPage() {
             />
             <Link
               href="/#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition hover:border-accent hover:text-accent"
+              className="ui-pill bg-card/95"
             >
               Want context on any of these?
             </Link>
